@@ -91,14 +91,14 @@ public class Main {
         int result2 = Fibonacci.fib(7);
         int result3 = Fibonacci.fib(8);
         int result4 = Fibonacci.fib(9);
-        int result5 = Fibonacci.fib(50);
+        long result5 = Fibonacci.fibMemoized(50, new HashMap<>());
 
 
         System.out.println("Fibonacci of 6 is: " + result);
         System.out.println("Fibonacci of 7 is: " + result2);
         System.out.println("Fibonacci of 8 is: " + result3);
         System.out.println("Fibonacci of 9 is: " + result4);
-        System.out.println("Fibonacci of 9 is: " + result5);
+        System.out.println("Fibonacci of 50 is: " + result5);
 
     }
 }
