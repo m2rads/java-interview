@@ -10,10 +10,9 @@ public class ProductsDigits {
         int minDigits = Integer.MAX_VALUE;
         for (int i = 1; i * i <= num; i++) {
             if (num % i == 0) {
-                int factor1 = i;
                 int factor2 = num / i;
 
-                int digitCount = countDigits(factor1) + countDigits(factor2);
+                int digitCount = countDigits(i) + countDigits(factor2);
 
                 minDigits = Math.min(minDigits, digitCount);
             }
