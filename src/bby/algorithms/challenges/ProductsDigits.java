@@ -27,7 +27,7 @@ public class ProductsDigits {
 
         while (num > 0) {
             count++;
-            n = n / 10;
+            num = num / 10;
         }
 
         return count;
