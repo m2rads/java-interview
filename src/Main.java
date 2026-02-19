@@ -87,18 +87,51 @@ public class Main {
 //        hashMap.put("A", 1);
 //        hashMap.put("B", 2);
 
-        int result = Fibonacci.fib(6);
-        int result2 = Fibonacci.fib(7);
-        int result3 = Fibonacci.fib(8);
-        int result4 = Fibonacci.fib(9);
-        long result5 = Fibonacci.fibMemoized(50, new HashMap<>());
+//        int result = Fibonacci.fib(6);
+//        int result2 = Fibonacci.fib(7);
+//        int result3 = Fibonacci.fib(8);
+//        int result4 = Fibonacci.fib(9);
+//        long result5 = Fibonacci.fibMemoized(50, new HashMap<>());
+//
+//
+//        System.out.println("Fibonacci of 6 is: " + result);
+//        System.out.println("Fibonacci of 7 is: " + result2);
+//        System.out.println("Fibonacci of 8 is: " + result3);
+//        System.out.println("Fibonacci of 9 is: " + result4);
+//        System.out.println("Fibonacci of 50 is: " + result5);
 
+        HashMap<String, Integer> hashMap = new HashMap<>();
 
-        System.out.println("Fibonacci of 6 is: " + result);
-        System.out.println("Fibonacci of 7 is: " + result2);
-        System.out.println("Fibonacci of 8 is: " + result3);
-        System.out.println("Fibonacci of 9 is: " + result4);
-        System.out.println("Fibonacci of 50 is: " + result5);
+        hashMap.put("Key", 1);
+        hashMap.put("Key", 2); // overwrite value for "Key"
+
+        int value = hashMap.get("Key");
+
+        if (hashMap.containsKey("Key")) {
+//            System.out.println("HashMap contains 'Key' with value: " + value);
+        } else {
+            System.out.println("HashMap does not contain 'Key'");
+        }
+
+        int count = hashMap.getOrDefault("key", 0);
+
+        hashMap.put("abc", count + 1);
+        hashMap.put("abc", hashMap.getOrDefault("abc", 0) + 1);
+//        System.out.println("Count for 'abc': " + hashMap.get("abc"));
+
+        // substring example
+//        String s = "abc";
+//
+//        for (int i = 0; i < s.length(); i++) {
+//            for (int j = i; j <= s.length(); j++) {
+//                String substring = s.substring(i, j); // start, end -> with end being inclusive
+//                System.out.println(substring);
+//            }
+//        }
+
+        // pairs of anagram among all substrings of a string
 
     }
+
+
 }
