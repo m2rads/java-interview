@@ -1,4 +1,4 @@
-package bby.data.structures;
+package bby.algorithms.challenges;
 
 import java.io.BufferedReader;
 import java.io.IOException;
