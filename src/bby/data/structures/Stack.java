@@ -14,7 +14,7 @@ public class Stack<T> {
             this.top = new Node<T>(data);
         } else {
             Node<T> pushedNode = new Node<>(data);
-            pushedNode.next = this. top;
+            pushedNode.next = this.top;
             this.top = pushedNode;
         }
         this.size++;
