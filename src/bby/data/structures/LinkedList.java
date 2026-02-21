@@ -21,6 +21,24 @@ public class LinkedList<T> {
         }
     }
 
+    public void appendRecursive(T data) {
+        if (this.head == null) {
+            this.head = new Node<>(data);
+            return;
+        }
+
+        this._appendRecursive(data, this.head);
+    }
+
+    private void _appendRecursive(T data, Node<T> curr) {
+        if (curr.next == null) {
+            curr.next = new Node<>(data);
+            return;
+        }
+
+        _appendRecursive(data, curr.next);
+    }
+
     public void printList() {
         StringBuilder text = new StringBuilder();
         Node<T> current = this.head;
