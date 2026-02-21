@@ -26,6 +26,12 @@ public class Snake {
             grid.add(row);
         }
 
+        this.snakeBody.forEach(pos -> {
+            int row = pos.get(0);
+            int col = pos.get(1);
+            grid.get(row).set(col, "0");
+        });
+
         grid.forEach(row -> System.out.println(String.join("|", row)));
     }
 
