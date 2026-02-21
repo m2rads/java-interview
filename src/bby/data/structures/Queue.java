@@ -29,7 +29,7 @@ public class Queue<T> {
         if (this.size != 0) {
             T data = this.front.data;
             this.front = this.front.next;
-            size--;
+            this.size--;
             return data;
         }
         return null;
