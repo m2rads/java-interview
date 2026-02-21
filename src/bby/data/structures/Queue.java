@@ -12,14 +12,14 @@ public class Queue<T> {
     }
 
     public void enqueue(T data) {
-        if (size == 0) {
+        if (this.size == 0) {
             this.front = new Node<T>(data);
             this.back = this.front;
         } else {
             this.back.next = new Node<T>(data);
             this.back = this.back.next;
         }
-        size++;
+        this.size++;
     }
 
     public T dequeue() {
