@@ -238,3 +238,8 @@ ArrayList: get/set = O(1), add/remove = O(n)
 Arrays.sort() = O(n log n)
 Binary Search = O(log n)
 ```
+
+```java
+return result.stream().mapToInt(i -> i).toArray();
+return result.stream().mapToInt(i -> i).toArray();
+```
