@@ -1,5 +1,7 @@
 package ms;
 
+import java.util.List;
+
 public class NonDivisibleSubset {
 
     public static int nonDivisibleSubset(int k, List<Integer> s) {
