@@ -41,10 +41,10 @@ public class QueensAttack {
 
                 // Check if there's an obstacle here
                 if (obstacleSet.contains(currentRow + "," + currentCol)) {
-                    break;  // Stop in this direction
+                    break;
                 }
 
-                totalSquares++;  // Count this square
+                totalSquares++;
 
                 // Move to next square in same direction
                 currentRow += dr;
