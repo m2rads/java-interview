@@ -1,5 +1,9 @@
 package ms;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class QueensAttack {
 
     public static int queensAttack(int n, int k, int r_q, int c_q, List<List<Integer>> obstacles) {
