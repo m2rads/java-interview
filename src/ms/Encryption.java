@@ -31,7 +31,6 @@ public class Encryption {
             sGrid.add(temp);
         }
 
-        // encrypt the string
         StringBuffer encryptedString = new StringBuffer();
 
         for (int col = 0; col < sCol; col++) {
