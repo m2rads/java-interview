@@ -84,6 +84,10 @@ public class LinkedList<T> {
         StringBuilder text = new StringBuilder();
         Node<T> current = this.head;
         while (current != null) {
+            if (current.next == null) {
+                text.append(current.data);
+                break;
+            }
             text.append(current.data).append(" -> ");
             current = current.next;
         }
@@ -130,4 +134,18 @@ public class LinkedList<T> {
         current.next = prev;
         _recursionReverse(next, current);
     } // O(n) time and O(n) space due to call stack
+
+    public static void main(String[] args) {
+
+        Node<Integer> node1 = new Node<>(1);
+        Node<Integer> node2 = new Node<>(2);
+        Node<Integer> node3 = new Node<>(3);
+
+        LinkedList<Integer> list = new LinkedList<>();
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.printList();
+
+    }
 }
