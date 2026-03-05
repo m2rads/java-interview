@@ -39,6 +39,27 @@ public class LinkedList<T> {
         _appendRecursive(data, curr.next);
     }
 
+    public Node<T> delete(T target) {
+        if (this.head == null) {
+            return null;
+        }
+        if (this.head.data.equals(target)) {
+            this.head = this.head.next;
+            return this.head;
+        }
+        Node<T> prev = null;
+        Node<T> current = this.head;
+        while(current != null) {
+            if (current.data.equals(target)) {
+                prev.next = current.next;
+                break;
+            }
+            prev = current;
+            current = current.next;
+        }
+        return this.head;
+    }
+
     public void printList() {
         StringBuilder text = new StringBuilder();
         Node<T> current = this.head;
