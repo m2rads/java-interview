@@ -60,6 +60,23 @@ public class LinkedList<T> {
         return this.head;
     }
 
+    public Node<T> deleteRecursive(T target) {
+        _deleteRecursive(this.head, null, target);
+        return this.head;
+    }
+
+    private void _deleteRecursive(Node<T> current, Node<T> prev, T target) {
+        if (current == null) {
+            return;
+        }
+
+        if (current.data.equals(target)) {
+            prev.next = current.next;
+            return;
+        }
+        _deleteRecursive(current.next, current, target);
+    }
+
     public void printList() {
         StringBuilder text = new StringBuilder();
         Node<T> current = this.head;
