@@ -61,9 +61,12 @@ public class LinkedList<T> {
     }
 
     public Node<T> deleteRecursive(T target) {
+        if (this.head.data.equals(target)) {
+            return this.head.next;
+        }
         _deleteRecursive(this.head, null, target);
         return this.head;
-    }
+    } // O(n) time and O(n) space due to call stack
 
     private void _deleteRecursive(Node<T> current, Node<T> prev, T target) {
         if (current == null) {
