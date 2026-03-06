@@ -182,7 +182,6 @@ public class DoublyLinkedList<T> {
         System.out.println(curr.data);
         System.out.println(prev.data);
 
-
         /* Recursive append tests */
         System.out.println(" **** Recursive append tests **** ");
         DoublyLinkedList<Integer> newList = new DoublyLinkedList<>();
@@ -206,7 +205,6 @@ public class DoublyLinkedList<T> {
         recREsult = newList.containsRecursive(4);
         System.out.println(recREsult);
 
-
         /* Deletion Test */
         System.out.println(" **** Deletion tests **** ");
         newList.delete(3);
@@ -214,7 +212,6 @@ public class DoublyLinkedList<T> {
         newList.delete(2);
         newList.delete(4);
         newList.recursivePrintList();
-
 
         /* Recursive Deletion Test */
         System.out.println(" **** Recursive Deletion tests **** ");
