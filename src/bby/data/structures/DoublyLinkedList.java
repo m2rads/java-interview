@@ -116,6 +116,22 @@ public class DoublyLinkedList<T> {
         return false;
     }
 
+    public Boolean containsRecursive(T target) {
+        return _containsRecursive(target, this.head);
+    }
+
+    private Boolean _containsRecursive(T target, Node<T> current) {
+        if (current == null) {
+            return false;
+        }
+
+        if (current.data.equals(target)) {
+            return true;
+        }
+
+        return _containsRecursive(target, current.next);
+    }
+
     public void printList() {
         StringBuilder result = new StringBuilder();
         Node<T> current = this.head;
@@ -182,6 +198,14 @@ public class DoublyLinkedList<T> {
         System.out.println(result);
         result = newList.contains(4);
         System.out.println(result);
+
+        /* Contains Recursive Test */
+        System.out.println(" **** Contains tests **** ");
+        Boolean recREsult = newList.containsRecursive(8);
+        System.out.println(recREsult);
+        recREsult = newList.containsRecursive(4);
+        System.out.println(recREsult);
+
 
         /* Deletion Test */
         System.out.println(" **** Deletion tests **** ");
