@@ -1,5 +1,7 @@
 package bby.data.structures;
 
+import java.nio.file.Paths;
+
 public class DoublyLinkedList<T> {
 
     Node<T> head;
@@ -77,7 +79,33 @@ public class DoublyLinkedList<T> {
         }
     }
 
-    public void printList() {
+    public void deleteRecursive(T target) {
+        _deleteRecursive(target, this.head);
+    }
+
+    private void _deleteRecursive(T target, Node<T> current) {
+
+        if (current.data.equals(target)) {
+            if (current.prev == null) {
+                this.head = current.next;
+                if (this.head != null) {
+                    this.head.prev = null;
+                }
+            } else {
+                current.prev.next = current.next;
+                if (current.next != null) {
+                    current.next.prev = current.prev;
+                }
+            }
+
+            return;
+        }
+
+        _deleteRecursive(target, current.next);
+
+    }
+
+        public void printList() {
         StringBuilder result = new StringBuilder();
         Node<T> current = this.head;
 
@@ -144,6 +172,23 @@ public class DoublyLinkedList<T> {
         newList.delete(2);
         newList.delete(4);
         newList.recursivePrintList();
+
+
+        /* Recursive Deletion Test */
+        System.out.println(" **** Recursive Deletion tests **** ");
+        newList.appendRecursive(1);
+        newList.appendRecursive(2);
+        newList.appendRecursive(3);
+        newList.appendRecursive(4);
+
+        newList.deleteRecursive(3);
+        newList.deleteRecursive(1);
+        newList.recursivePrintList();
+
+        newList.deleteRecursive(2);
+        newList.deleteRecursive(4);
+        newList.recursivePrintList();
+
 
     }
 
