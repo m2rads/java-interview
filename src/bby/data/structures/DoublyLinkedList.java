@@ -48,6 +48,35 @@ public class DoublyLinkedList<T> {
         _appendRecursive(data, newNode, current.next);
     }
 
+    public void delete(T target) {
+        Node<T> current = this.head;
+
+        while (current != null) {
+            if (current.data.equals(target)) {
+                // if the first node
+                if (current.prev == null) {
+                    this.head = current.next;
+                    // cleanup
+                    if (this.head != null) {
+                        this.head.prev = null;
+                    }
+                }
+
+                // Middle or Tail
+                else {
+                    current.prev.next = current.next;
+                    // if middle
+                    if (current.next != null) {
+                        current.next.prev = current.prev;
+                    }
+                }
+                return;
+            }
+
+            current = current.next;
+        }
+    }
+
     public void printList() {
         StringBuilder result = new StringBuilder();
         Node<T> current = this.head;
@@ -72,6 +101,9 @@ public class DoublyLinkedList<T> {
     }
 
     private void _recursivePrintList(Node<T> current, StringBuffer result) {
+        if (current == null) {
+            return;
+        }
         if (current.next == null) {
             result.append(current.data);
             return;
@@ -103,6 +135,14 @@ public class DoublyLinkedList<T> {
         newList.appendRecursive(2);
         newList.appendRecursive(3);
         newList.appendRecursive(4);
+        newList.recursivePrintList();
+
+        /* Deletion Test */
+        System.out.println(" **** Deletion tests **** ");
+        newList.delete(3);
+        newList.delete(1);
+        newList.delete(2);
+//        newList.delete(4);
         newList.recursivePrintList();
 
     }
