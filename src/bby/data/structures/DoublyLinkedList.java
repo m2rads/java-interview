@@ -142,7 +142,7 @@ public class DoublyLinkedList<T> {
         newList.delete(3);
         newList.delete(1);
         newList.delete(2);
-//        newList.delete(4);
+        newList.delete(4);
         newList.recursivePrintList();
 
     }
