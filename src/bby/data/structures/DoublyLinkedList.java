@@ -132,6 +132,22 @@ public class DoublyLinkedList<T> {
         return _containsRecursive(target, current.next);
     }
 
+    public void reverse() {
+        Node<T> current = this.head;
+        Node<T> temp= null;
+
+        while (current != null) {
+            temp = current.prev;
+            current.prev = current.next;
+            current.next = temp;
+            current = current.prev;
+        }
+
+        if (temp != null) {
+            this.head = temp.prev;
+        }
+    }
+
     public void printList() {
         StringBuilder result = new StringBuilder();
         Node<T> current = this.head;
@@ -190,6 +206,11 @@ public class DoublyLinkedList<T> {
         newList.appendRecursive(3);
         newList.appendRecursive(4);
         newList.recursivePrintList();
+
+        /* Reverse tests */
+        System.out.println(" **** Reverse tests **** ");
+        newList.reverse();
+        newList.printList();
 
         /* Contains Test */
         System.out.println(" **** Contains tests **** ");
