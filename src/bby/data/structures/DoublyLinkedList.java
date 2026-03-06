@@ -102,10 +102,21 @@ public class DoublyLinkedList<T> {
         }
 
         _deleteRecursive(target, current.next);
-
     }
 
-        public void printList() {
+    public Boolean contains(T target) {
+        Node<T> current = this.head;
+        while (current != null) {
+            if (current.data.equals(target)) {
+                return true;
+            }
+            current = current.next;
+        }
+
+        return false;
+    }
+
+    public void printList() {
         StringBuilder result = new StringBuilder();
         Node<T> current = this.head;
 
@@ -165,6 +176,13 @@ public class DoublyLinkedList<T> {
         newList.appendRecursive(4);
         newList.recursivePrintList();
 
+        /* Contains Test */
+        System.out.println(" **** Contains tests **** ");
+        Boolean result = newList.contains(8);
+        System.out.println(result);
+        result = newList.contains(4);
+        System.out.println(result);
+
         /* Deletion Test */
         System.out.println(" **** Deletion tests **** ");
         newList.delete(3);
@@ -188,7 +206,6 @@ public class DoublyLinkedList<T> {
         newList.deleteRecursive(2);
         newList.deleteRecursive(4);
         newList.recursivePrintList();
-
 
     }
 
