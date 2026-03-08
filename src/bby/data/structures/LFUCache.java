@@ -4,7 +4,7 @@ package bby.data.structures;
 import java.util.*;
 
 class LFUCache {
-    class Node {
+    static class Node {
         int key, value, freq;
         Node prev, next;
 
@@ -15,7 +15,7 @@ class LFUCache {
         }
     }
 
-    class DLList {
+    static class DLList {
         Node head, tail;
         int size;
 
