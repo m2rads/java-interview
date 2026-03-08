@@ -6,12 +6,12 @@ import java.util.HashMap;
 public class LRU<T> {
 
     static class Node<T> {
-        int key;
-        int data;
+        T key;
+        T data;
         Node<T> prev;
         Node<T> next;
 
-        public Node(int key, int data) {
+        public Node(T key, T data) {
             this.key = key;
             this.data = data;
         }
@@ -25,8 +25,8 @@ public class LRU<T> {
         this.capacity = capacity;
         this.map = new HashMap<>();
 
-        this.head = new Node<>(0, 0);
-        this.tail = new Node<>(0, 0);
+        this.head = new Node<>(null, null);
+        this.tail = new Node<>(null, null);
         head.next = tail;
         tail.prev = head;
     }
