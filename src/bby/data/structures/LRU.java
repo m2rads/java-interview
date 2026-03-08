@@ -68,7 +68,7 @@ public class LRU<T> {
 
     private void addToFront(Node<T> node) {
         node.next = head.next;
-        node.prev = head.prev;
+        node.prev = head;
         head.next.prev = node;
         head.next = node;
     }
